@@ -6,6 +6,13 @@ const Category      = require('../models/category');
 const Admin=require('../models/admin')
 const bcrypt = require('bcryptjs');
 
+const fs = require('fs');
+const path = require('path');
+
+const uploadDir = path.join('/tmp/public/files/images');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
 
 const nodemailer = require('nodemailer')
 
